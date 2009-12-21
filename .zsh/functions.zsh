@@ -1,4 +1,4 @@
-function zsh_recompile() {
+function zsh_recompile {
   autoload -U zrecompile
 
   [[ -f ~/.zshrc ]] && zrecompile -p ~/.zshrc
@@ -77,4 +77,12 @@ function pg_start {
 
 function pg_stop {
   /usr/local/bin/pg_ctl -D /usr/local/var/postgres stop -s -m fast
+}
+
+function mysql_start {
+  /usr/local/Cellar/mysql/5.1.41/share/mysql/mysql.server start
+}
+
+function mysql_stop {
+  /usr/local/Cellar/mysql/5.1.41/share/mysql/mysql.server stop
 }

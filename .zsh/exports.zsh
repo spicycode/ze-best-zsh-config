@@ -18,7 +18,7 @@ export GREP_COLOR='3;33'
 # This resolves issues install the mysql, postgres, and other gems with native non universal binary extensions
 export ARCHFLAGS='-arch x86_64'
 
-export LESS='--ignore-case --quit-if-one-screen --raw-control-chars'
+export LESS='--ignore-case --raw-control-chars'
 export PAGER='less'
 
 # Set macvim with flag to wait for console (git commit compat) as our EDITOR

@@ -34,3 +34,7 @@ export ACTIVEMQ=~/src/relevance/activemq/bin/macosx/activemq
 
 # Point to clojure for VimClojure
 export CLOJURE_EXT=~/src/clojure/jars
+
+export GOROOT=`brew --prefix`/Cellar/go/HEAD
+export GOARCH=
+export GOOS=

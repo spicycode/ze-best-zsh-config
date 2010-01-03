@@ -43,5 +43,4 @@ function git_prompt_info {
   fi
 }
 
-# PROMPT='%~%<< $(git_prompt_info)${PR_BOLD_WHITE}>%{${reset_color}%} '
-PROMPT="%~%<< ${vcs_info_msg_0_}> "
+PROMPT='%~%<< $(git_prompt_info)${PR_BOLD_WHITE}>%{${reset_color}%} '

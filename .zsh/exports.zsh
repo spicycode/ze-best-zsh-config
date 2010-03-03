@@ -1,5 +1,5 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=~/.bin:/usr/local/bin:~/src/opensource/euca2ools-1.1/bin:$PATH
+export PATH=~/.bin:/usr/local/bin:/opt/local/lib/postgresql84/bin/:~/src/opensource/euca2ools-1.1/bin:$PATH
 
 # Our list of directories we can cd to from anywhere
 export CDPATH=.:~/src/opensource:~/src/relevance:~/src/spicycode
@@ -12,7 +12,7 @@ export TERM=xterm-color
 export CLICOLOR=1
 
 # Enable color in grep
-export GREP_OPTIONS='--color=auto' 
+export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='3;33'
 
 # This resolves issues install the mysql, postgres, and other gems with native non universal binary extensions
@@ -26,15 +26,8 @@ export PAGER='less'
 # export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
 export EDITOR='mvim -f'
 # export EDITOR='mate -w'
-
-# Make activemq happy
-export ACTIVEMQ_HOME=~/src/relevance/activemq/
-export ACTIVEMQ_BASE=~/src/relevance/activemq/
-export ACTIVEMQ=~/src/relevance/activemq/bin/macosx/activemq
+# export EDITOR='aquamacs'
+#export EDITOR='vim'
 
 # Point to clojure for VimClojure
 export CLOJURE_EXT=~/src/clojure/jars
-
-export GOROOT=`brew --prefix`/Cellar/go/HEAD
-export GOARCH=
-export GOOS=

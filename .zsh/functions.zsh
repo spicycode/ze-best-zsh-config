@@ -86,3 +86,35 @@ function mysql_start {
 function mysql_stop {
   /usr/local/Cellar/mysql/5.1.41/share/mysql/mysql.server stop
 }
+
+function mongodb_start {
+  mongod run --config /usr/local/Cellar/mongodb/1.2.3-x86_64/mongod.conf
+}
+
+function mount_work {
+  /Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt -t -k "" --protect-hidden=no ~/Documents/work ~/src/relevance
+}
+
+function mount_passwords {
+  /Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt -t -k "" --protect-hidden=no ~/src/relevance/relevance_it/passwords2.tc
+}
+
+function ss {
+  if [ -e "./script/server" ]; then
+    ./script/server
+  fi
+  
+  if [ -e "./script/rails" ]; then
+    ./script/rails server
+  fi
+}
+
+function sc {
+  if [ -e "./script/console" ]; then
+    ./script/console
+  fi
+
+  if [ -e "./script/rails" ]; then
+    ./script/rails console
+  fi
+}

@@ -12,11 +12,10 @@ alias ll='ls -GFhl'
 
 alias rmate='mate Capfile Rakefile README app bin config doc db lib public script spec test stories features examples'
 alias ri='ri -Tf ansi'
-alias ss='./script/server'
-alias sc='./script/console'
-alias sg='./script/generate'
-alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias vim='mvim -p'
+
+
+#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+#alias vim='mvim -p'
 alias gvim='mvim -p'
 alias mysql='mysql -u root'
 alias mysqladmin='mysqladmin -u root'

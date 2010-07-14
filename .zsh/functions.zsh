@@ -87,10 +87,6 @@ function mysql_stop {
   /usr/local/Cellar/mysql/5.1.48/share/mysql/mysql.server stop
 }
 
-function mongodb_start {
-  mongod run --config /usr/local/Cellar/mongodb/1.4.3-x86_64/mongod.conf
-}
-
 function mount_work {
   /Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt -t -k "" --protect-hidden=no ~/Documents/relevance.tc ~/src/relevance
   ~/src/relevance/mount_passwords.sh

@@ -29,9 +29,9 @@ function mysqlredo {
   mysqladmin create $1
 }
 
-function nginx_start { sudo nginx }
+function nginx_start { sudo /usr/local/nginx/sbin/nginx }
 
-function nginx_stop { sudo kill $(cat /opt/nginx/logs/nginx.pid) }
+function nginx_stop { sudo kill $(cat /usr/local/nginx/logs/nginx.pid) }
 
 # From http://tomafro.net/tags/zsh
 
@@ -80,23 +80,20 @@ function pg_stop {
 }
 
 function mysql_start {
-  /usr/local/Cellar/mysql/5.1.41/share/mysql/mysql.server start
+  /usr/local/Cellar/mysql/5.1.48/share/mysql/mysql.server start
 }
 
 function mysql_stop {
-  /usr/local/Cellar/mysql/5.1.41/share/mysql/mysql.server stop
+  /usr/local/Cellar/mysql/5.1.48/share/mysql/mysql.server stop
 }
 
 function mongodb_start {
-  mongod run --config /usr/local/Cellar/mongodb/1.2.3-x86_64/mongod.conf
+  mongod run --config /usr/local/Cellar/mongodb/1.4.3-x86_64/mongod.conf
 }
 
 function mount_work {
-  /Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt -t -k "" --protect-hidden=no ~/Documents/work ~/src/relevance
-}
-
-function mount_passwords {
-  /Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt -t -k "" --protect-hidden=no ~/src/relevance/relevance_it/passwords2.tc
+  /Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt -t -k "" --protect-hidden=no ~/Documents/relevance.tc ~/src/relevance
+  ~/src/relevance/mount_passwords.sh
 }
 
 function ss {

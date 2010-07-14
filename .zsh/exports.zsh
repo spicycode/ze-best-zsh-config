@@ -1,5 +1,5 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=~/.bin:/usr/local/bin:/opt/local/lib/postgresql84/bin/:~/src/opensource/euca2ools-1.1/bin:$PATH
+export PATH=~/.bin:/usr/local/sbin:/usr/local/bin:/opt/local/lib/postgresql84/bin/:~/src/opensource/euca2ools-1.1/bin:$PATH
 
 # Our list of directories we can cd to from anywhere
 export CDPATH=.:~/src/opensource:~/src/relevance:~/src/spicycode
@@ -25,9 +25,12 @@ export PAGER='less'
 # and then refocus on iTerm
 # export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
 export EDITOR='mvim -f'
-# export EDITOR='mate -w'
 # export EDITOR='aquamacs'
 #export EDITOR='vim'
 
 # Point to clojure for VimClojure
 export CLOJURE_EXT=~/src/clojure/jars
+
+export PYTHONPATH=/usr/local/lib/python2.6/site-packages
+
+export ACTIVEMQ_HOME=/usr/local/Cellar/activemq/5.3.1/libexec

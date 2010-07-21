@@ -33,4 +33,4 @@ export CLOJURE_EXT=~/src/clojure/jars
 
 export PYTHONPATH=/usr/local/lib/python2.6/site-packages
 
-export ACTIVEMQ_HOME=/usr/local/Cellar/activemq/5.3.1/libexec
+export ACTIVEMQ_HOME=/usr/local/Cellar/activemq/5.3.2/libexec

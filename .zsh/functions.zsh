@@ -98,20 +98,20 @@ function mount_work {
 
 function ss {
   if [ -e "./script/server" ]; then
-    ./script/server
+    ./script/server $*
   fi
   
   if [ -e "./script/rails" ]; then
-    ./script/rails server
+    ./script/rails server $*
   fi
 }
 
 function sc {
   if [ -e "./script/console" ]; then
-    ./script/console
+    ./script/console $*
   fi
 
   if [ -e "./script/rails" ]; then
-    ./script/rails console
+    ./script/rails console $*
   fi
 }

@@ -80,15 +80,11 @@ function pg_stop {
 }
 
 function mysql_start {
-  /usr/local/Cellar/mysql/5.1.47/share/mysql/mysql.server start
+  /usr/local/Cellar/mysql/5.1.48/share/mysql/mysql.server start
 }
 
 function mysql_stop {
-  /usr/local/Cellar/mysql/5.1.47/share/mysql/mysql.server stop
-}
-
-function mongodb_start {
-  mongod run --config /usr/local/Cellar/mongodb/1.4.2-x86_64/mongod.conf
+  /usr/local/Cellar/mysql/5.1.48/share/mysql/mysql.server stop
 }
 
 function mount_work {

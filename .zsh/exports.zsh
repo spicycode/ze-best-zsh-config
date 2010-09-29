@@ -1,7 +1,6 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=~/.bin:~/.cljr/bin:/usr/local/sbin:/usr/local/bin:/opt/local/lib/postgresql84/bin/:~/src/opensource/euca2ools-1.1/bin:$PATH
+export PATH=~/.bin:~/.cljr/bin:/usr/local/sbin:/usr/local/bin:/opt/local/lib/postgresql84/bin/:/usr/local/Cellar/npm/0.2.2/share/npm/bin:$PATH
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node
-
 
 # Our list of directories we can cd to from anywhere
 export CDPATH=.:~/src/opensource:~/src/relevance:~/src/spicycode

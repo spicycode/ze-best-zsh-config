@@ -1,9 +1,8 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=~/.bin:~/.cljr/bin:/usr/local/sbin:/usr/local/bin:/opt/local/lib/postgresql84/bin/:/usr/local/Cellar/npm/0.2.2/share/npm/bin:$PATH
-export NODE_PATH=$NODE_PATH:/usr/local/lib/node
+export PATH=~/.bin:/usr/local/sbin:/usr/local/bin:$PATH
 
 # Our list of directories we can cd to from anywhere
-export CDPATH=.:~/src/opensource:~/src/relevance:~/src/spicycode
+export CDPATH=.:~/src/
 
 # Set default console Java to 1.6
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
@@ -22,17 +21,6 @@ export ARCHFLAGS='-arch x86_64'
 
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='less'
-
-# Set macvim with flag to wait for console (git commit compat) as our EDITOR
-# and then refocus on iTerm
-# export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
 export EDITOR='mvim -f'
-# export EDITOR='aquamacs'
-#export EDITOR='vim'
-
-# Point to clojure for VimClojure
-export CLOJURE_EXT=~/src/clojure/jars
 
 export PYTHONPATH=/usr/local/lib/python2.6/site-packages
-
-export ACTIVEMQ_HOME=/usr/local/Cellar/activemq/5.3.2/libexec

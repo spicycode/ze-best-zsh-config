@@ -13,7 +13,3 @@ source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 
 if [[ -s /Users/spicycode/.rvm/scripts/rvm ]] ; then source /Users/spicycode/.rvm/scripts/rvm ; fi
-
-export NVM_DIR=$HOME/.nvm
-source $NVM_DIR/nvm.sh
-nvm use

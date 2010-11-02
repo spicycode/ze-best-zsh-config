@@ -46,11 +46,11 @@ function pg_stop {
 }
 
 function mysql_start {
-  /usr/local/Cellar/mysql/5.1.48/share/mysql/mysql.server start
+  mysql.server start
 }
 
 function mysql_stop {
-  /usr/local/Cellar/mysql/5.1.48/share/mysql/mysql.server stop
+  mysql.server stop
 }
 
 function mount_work {
@@ -76,4 +76,8 @@ function sc {
   if [ -e "./script/rails" ]; then
     ./script/rails console $*
   fi
+}
+
+function shutup_fan {
+  /Applications/smcFanControl.app/Contents/Resources/smc -k F1Mx -w 0000
 }

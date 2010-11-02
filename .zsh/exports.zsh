@@ -1,5 +1,5 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=~/.bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=~/.bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
 
 # Our list of directories we can cd to from anywhere
 export CDPATH=.:~/src/
@@ -23,4 +23,5 @@ export LESS='--ignore-case --raw-control-chars'
 export PAGER='less'
 export EDITOR='mvim -f'
 
+export NODE_PATH=/usr/local/lib/node
 export PYTHONPATH=/usr/local/lib/python2.6/site-packages

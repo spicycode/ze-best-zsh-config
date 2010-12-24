@@ -1,21 +1,30 @@
-#!/usr/bin/env zsh
-# ------------------------------------------------------------------------------
-# Fish style live command coloring.
-# From: http://www.zsh.org/mla/users/2010/msg00692.html
-# ------------------------------------------------------------------------------
+#!/bin/zsh
 
-# Required options.
-setopt extendedglob
+# Copyleft 2010 paradoxxxzero All wrongs reserved
+# With contribution from James Ahlborn
+# https://gist.github.com/752727
+# Fork of https://gist.github.com/586698 by nicoulaj / dingram / roylzuo ...
+# From http://www.zsh.org/mla/users/2010/msg00692.html
 
 # Token types styles.
 # See http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#SEC135
-ZLE_RESERVED_WORD_STYLE='bold'
-ZLE_ALIAS_STYLE='bold'
-ZLE_BUILTIN_STYLE='bold'
-ZLE_FUNCTION_STYLE='bold'
-ZLE_COMMAND_STYLE='bold'
+ZLE_RESERVED_WORD_STYLE='fg=yellow,bold'
+ZLE_ALIAS_STYLE='fg=magenta,bold'
+ZLE_BUILTIN_STYLE='fg=cyan,bold'
+ZLE_FUNCTION_STYLE='fg=blue,bold'
+ZLE_COMMAND_STYLE='fg=green,bold'
 ZLE_COMMAND_UNKNOWN_TOKEN_STYLE='fg=red,bold'
-ZLE_TOKENS_FOLLOWED_BY_COMMANDS=('|' '||' ';' '&' '&&' 'sudo' 'start' 'time' 'strace')
+
+ZLE_HYPHEN_CLI_OPTION='fg=yellow,bold'
+ZLE_DOUBLE_HYPHEN_CLI_OPTION='fg=green,bold'
+ZLE_SINGLE_QUOTED='fg=magenta,bold'
+ZLE_DOUBLE_QUOTED='fg=red,bold'
+ZLE_BACK_QUOTED='fg=cyan,bold'
+ZLE_GLOBING='fg=blue,bold'
+
+ZLE_DEFAULT='fg=white,bold'
+
+ZLE_TOKENS_FOLLOWED_BY_COMMANDS=('|' '||' ';' '&' '&&' 'sudo' 'start' 'time' 'strace' '§')
 
 # Recolorize the current ZLE buffer.
 colorize-zle-buffer() {
@@ -36,18 +45,49 @@ colorize-zle-buffer() {
         *"$cmd is"*)        style=$ZLE_COMMAND_STYLE;;
         *)                  style=$ZLE_COMMAND_UNKNOWN_TOKEN_STYLE;;
       esac
-      region_highlight+=("$start_pos $end_pos $style")
+    else
+  case $arg in
+      '--'*) style=$ZLE_DOUBLE_HYPHEN_CLI_OPTION;;
+      '-'*) style=$ZLE_HYPHEN_CLI_OPTION;;
+      "'"*"'") style=$ZLE_SINGLE_QUOTED;;
+      '"'*'"') style=$ZLE_DOUBLE_QUOTED;;
+      '`'*'`') style=$ZLE_BACK_QUOTED;;
+      *"*"*) style=$ZLE_GLOBING;;
+      *) style=$ZLE_DEFAULT;;
+  esac
     fi
+    region_highlight+=("$start_pos $end_pos $style")
     [[ ${${ZLE_TOKENS_FOLLOWED_BY_COMMANDS[(r)${arg//|/\|}]}:+yes} = 'yes' ]] && colorize=true
     start_pos=$end_pos
   done
 }
 
 # Bind the function to ZLE events.
-colorize-hook-self-insert() { builtin zle .self-insert && colorize-zle-buffer }
-colorize-hook-backward-delete-char() { builtin zle .backward-delete-char && colorize-zle-buffer }
-colorize-hook-vi-backward-delete-char() { builtin zle .vi-backward-delete-char && colorize-zle-buffer }
+ZLE_COLORED_FUNCTIONS=(
+    self-insert
+    delete-char
+    backward-delete-char
+    kill-word
+    backward-kill-word
+    up-line-or-history
+    down-line-or-history
+    beginning-of-history
+    end-of-history
+    undo
+    redo
+    yank
+)
 
-zle -N self-insert colorize-hook-self-insert
-zle -N backward-delete-char colorize-hook-backward-delete-char
-zle -N vi-backward-delete-char colorize-hook-vi-backward-delete-char
+for f in $ZLE_COLORED_FUNCTIONS; do
+    eval "$f() { zle .$f && colorize-zle-buffer } ; zle -N $f"
+done
+
+# Expand or complete hack
+# Thanks to James Ahlborn :
+
+# create an expansion widget which mimics the original "expand-or-complete" (you can see the default setup using "zle -l -L")
+zle -C orig-expand-or-complete .expand-or-complete _main_complete
+
+# use the orig-expand-or-complete inside the colorize function (for some reason, using the ".expand-or-complete" widget doesn't work the same)
+expand-or-complete() { builtin zle orig-expand-or-complete && colorize-zle-buffer }
+zle -N expand-or-complete

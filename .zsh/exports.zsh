@@ -21,7 +21,7 @@ export ARCHFLAGS='-arch x86_64'
 
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='less'
-export EDITOR='mvim -f'
+export EDITOR='vim'
 
 export NODE_PATH=/usr/local/lib/node
 export PYTHONPATH=/usr/local/lib/python2.6/site-packages

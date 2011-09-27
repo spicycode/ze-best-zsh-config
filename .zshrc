@@ -12,4 +12,4 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 
-if [[ -s /Users/spicycode/.rvm/scripts/rvm ]] ; then source /Users/spicycode/.rvm/scripts/rvm ; fi
+source /Users/spicycode/.rvm/scripts/rvm 

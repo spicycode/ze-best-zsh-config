@@ -12,4 +12,4 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 
-source /Users/spicycode/.rvm/scripts/rvm 
+source ~/.rvm/scripts/rvm 

@@ -28,6 +28,7 @@ export PYTHONPATH=/usr/local/lib/python2.6/site-packages
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C 
 
+# For the custom built ruby 1.9.3 I rocks
 # https://gist.github.com/1688857
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000

@@ -1,6 +1,6 @@
 function zsh_recompile {
   autoload -U zrecompile
-
+  rm -f ~/.zsh/**/*.zwc
   [[ -f ~/.zshrc ]] && zrecompile -p ~/.zshrc
   [[ -f ~/.zshrc.zwc.old ]] && rm -f ~/.zshrc.zwc.old
 
@@ -22,7 +22,7 @@ function extract {
           *.tar.bz2)   tar xjf $1  ;;
           *.tar.gz)    tar xzf $1  ;;
           *.bz2)       bunzip2 $1  ;;
-          *.rar)       rar x $1    ;;
+          *.rar)       unrar x $1    ;;
           *.gz)        gunzip $1   ;;
           *.tar)       tar xf $1   ;;
           *.tbz2)      tar xjf $1  ;;
@@ -53,31 +53,10 @@ function mysql_stop {
   mysql.server stop
 }
 
-function mount_work {
-  /Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt -t -k "" --protect-hidden=no ~/Documents/relevance.tc ~/src/relevance
-  ~/src/relevance/mount_passwords.sh
-}
-
 function ss {
-  if [ -e "./script/server" ]; then
-    ./script/server $*
-  fi
-  
-  if [ -e "./script/rails" ]; then
-    ./script/rails server $*
-  fi
+./script/rails server $*
 }
 
 function sc {
-  if [ -e "./script/console" ]; then
-    ./script/console $*
-  fi
-
-  if [ -e "./script/rails" ]; then
-    ./script/rails console $*
-  fi
-}
-
-function shutup_fan {
-  /Applications/smcFanControl.app/Contents/Resources/smc -k F1Mx -w 0000
+./script/rails console $*
 }

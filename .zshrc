@@ -10,6 +10,4 @@ source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 source ~/.zsh/hitch.zsh
 
-if [[ -s /Users/spicycode/.rvm/scripts/rvm ]] ; then source /Users/spicycode/.rvm/scripts/rvm ; fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+eval "$(rbenv init -)"

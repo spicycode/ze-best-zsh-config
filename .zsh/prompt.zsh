@@ -1,7 +1,7 @@
 function git_prompt_info {
   local ref=$(git symbolic-ref HEAD 2> /dev/null)
   local gitst="$(git status 2> /dev/null)"
-  local pairname=${${${GIT_AUTHOR_EMAIL#pair+}%@thinkrelevance.com}//+/\/}
+  local pairname=${${${GIT_AUTHOR_EMAIL#pair+}%@github.com}//+/\/}
   if [[ ${pairname} == 'ch' || ${pairname} == '' ]]; then
     pairname=''
   else

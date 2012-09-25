@@ -9,5 +9,7 @@ alias ri='ri -Tf ansi'
 alias mysql='mysql -u root'
 alias mysqladmin='mysqladmin -u root'
 
-alias e='aquamacs'
 alias be='bundle exec'
+alias bx='bundle exec'
+
+alias gentags='ctags .'

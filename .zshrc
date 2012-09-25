@@ -9,5 +9,4 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 source ~/.zsh/hitch.zsh
-
-eval "$(rbenv init -)"
+source /opt/github/env.sh

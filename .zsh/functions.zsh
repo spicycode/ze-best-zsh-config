@@ -54,9 +54,17 @@ function mysql_stop {
 }
 
 function ss {
-./script/rails server $*
+  if [ -e script/server ]; then
+    script/server $@
+  else
+    script/rails server $@
+  fi
 }
 
 function sc {
-./script/rails console $*
+  if [ -e script/rails ]; then
+    script/rails console $@
+  else
+    script/console $@
+  fi
 }

@@ -19,9 +19,9 @@ export ARCHFLAGS='-arch x86_64'
 
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='less'
-export EDITOR='vim'
+export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
 
-export NODE_PATH=/opt/boxen/homebrew/lib/node_modules
+export NODE_PATH=/opt/boxen/nodenv/versions/v0.10/lib
 export PYTHONPATH=/usr/local/lib/python2.6/site-packages
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C

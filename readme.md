@@ -5,4 +5,4 @@ On OSX it works best with the latest ZSH (4.3.X).  You can get it via the follow
     # brew
     brew update && brew install zsh
     $EDITOR /etc/shells and add /usr/local/bin/zsh
-    chsh -S /usr/local/bin/zsh
+    chsh -s /usr/local/bin/zsh

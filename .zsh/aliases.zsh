@@ -16,3 +16,5 @@ alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
 
 alias gentags='ctags . && rm .tags;ln -s tags .tags'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias rake='noglob rake'
+alias bower='noglob bower'

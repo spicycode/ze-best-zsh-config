@@ -13,3 +13,9 @@ source /opt/boxen/env.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+precmd() {
+  if [[ -n "$TMUX" ]]; then
+    tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
+  fi
+}

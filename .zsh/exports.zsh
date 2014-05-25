@@ -1,6 +1,5 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=bin:script:~/.rbenv/bin:~/.bin:node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:/opt/boxen/nvm/v0.8.8/bin:$PATH
-
+export PATH=bin:script:~/.rbenv/bin:~/.bin:node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:~/.cabal/bin:$HOME/Library/Haskell/bin:$PATH
 # Set default console Java to 1.6
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_13.jdk/Contents/Home
 export ANDROID_SDK_ROOT=/opt/boxen/homebrew/opt/android-sdk

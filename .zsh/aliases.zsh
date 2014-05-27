@@ -14,7 +14,7 @@ alias bx='bundle exec'
 
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
 
-alias gentags='ctags .'
+alias gentags='rm tags;ctags app/**/*.rb lib/**/*.rb config/**/*.rb'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias rake='noglob rake'
 alias bower='noglob bower'

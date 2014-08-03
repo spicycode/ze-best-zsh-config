@@ -16,10 +16,8 @@ export GREP_COLOR='3;33'
 # This resolves issues install the mysql, postgres, and other gems with native non universal binary extensions
 export ARCHFLAGS='-arch x86_64'
 
-export GIT_PAGER="most"
-
 export LESS='--ignore-case --raw-control-chars'
-export PAGER='less'
+export PAGER='most'
 export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
 export NODE_PATH=/opt/boxen/nodenv/versions/v0.10/lib
 export PYTHONPATH=/usr/local/lib/python2.6/site-packages

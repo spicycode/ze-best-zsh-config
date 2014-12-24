@@ -9,6 +9,7 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 source ~/.zsh/hitch.zsh
+source ~/src/zaw/zaw.zsh
 source /opt/boxen/env.sh
 
 ### Added by the Heroku Toolbelt

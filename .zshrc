@@ -10,9 +10,7 @@ source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 source ~/.zsh/hitch.zsh
 source /opt/boxen/env.sh
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+source ~/src/zaw/zaw.zsh
 
 precmd() {
   if [[ -n "$TMUX" ]]; then

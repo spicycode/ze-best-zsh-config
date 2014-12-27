@@ -9,11 +9,6 @@ alias ri='ri -Tf ansi'
 alias mysql='mysql -u root'
 alias mysqladmin='mysqladmin -u root'
 
-alias be='bundle exec'
-alias bx='bundle exec'
-
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
-
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vim='vim'
 alias rake='noglob rake'
 alias bower='noglob bower'

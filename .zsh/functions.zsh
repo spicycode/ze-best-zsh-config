@@ -62,10 +62,10 @@ function ss {
 }
 
 function sc {
-  if [ -e script/rails ]; then
-    script/rails console $@
-  else
+  if [ -e script/console ]; then
     script/console $@
+  else
+    script/rails console $@
   fi
 }
 

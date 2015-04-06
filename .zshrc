@@ -18,3 +18,6 @@ precmd() {
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
   fi
 }
+
+# OPAM configuration
+. /Users/spicycode/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

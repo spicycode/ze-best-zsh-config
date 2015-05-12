@@ -1,12 +1,6 @@
 function git_prompt_info {
   local ref=$(=git symbolic-ref HEAD 2> /dev/null)
   local gitst="$(=git status 2> /dev/null)"
-  local pairname=${${${GIT_AUTHOR_EMAIL#pair+}%@github.com}//+/\/}
-  if [[ ${pairname} == 'ch' || ${pairname} == '' ]]; then
-    pairname=''
-  else
-    pairname=" ($pairname)"
-  fi
 
   if [[ -f .git/MERGE_HEAD ]]; then
     if [[ ${gitst} =~ "unmerged" ]]; then
@@ -25,8 +19,8 @@ function git_prompt_info {
   fi
 
   if [[ -n $ref ]]; then
-    echo "%{$fg_bold[green]%}/${ref#refs/heads/}%{$reset_color%}$gitstatus$pairname"
+    echo "%{$fg_no_bold[green]%}/${ref#refs/heads/}%{$reset_color%}$gitstatus"
   fi
 }
 
-PROMPT='%~%<< $(git_prompt_info)${PR_BOLD_WHITE}>%{${reset_color}%} '
+PROMPT='%~%<< $(git_prompt_info)${PR_BLACK}>%{${reset_color}%} '

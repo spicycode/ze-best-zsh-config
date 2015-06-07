@@ -37,22 +37,6 @@ function extract {
   fi
 }
 
-function pg_start {
-  /usr/local/bin/pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
-}
-
-function pg_stop {
-  /usr/local/bin/pg_ctl -D /usr/local/var/postgres stop -s -m fast
-}
-
-function mysql_start {
-  mysql.server start
-}
-
-function mysql_stop {
-  mysql.server stop
-}
-
 function ss {
   if [ -e script/server ]; then
     script/server $@

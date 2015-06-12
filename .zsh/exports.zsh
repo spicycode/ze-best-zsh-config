@@ -16,7 +16,6 @@ export ARCHFLAGS='-arch x86_64'
 
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='most'
-export NODE_PATH=/opt/boxen/nodenv/versions/v0.10/lib
 export EDITOR='vim'
 export PYTHONPATH=/usr/local/lib/python2.6/site-packages
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place

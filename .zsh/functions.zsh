@@ -53,10 +53,6 @@ function sc {
   fi
 }
 
-function fix_airplay {
-  sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`
-}
-
 # Detect empty enter, execute git status if in git dir
 magic-enter () {
         if [[ -z $BUFFER ]]; then

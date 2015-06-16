@@ -19,8 +19,8 @@ function git_prompt_info {
   fi
 
   if [[ -n $ref ]]; then
-    echo "%{$fg_no_bold[green]%}/${ref#refs/heads/}%{$reset_color%}$gitstatus"
+    echo "%{$fg_bold[green]%}/${ref#refs/heads/}%{$reset_color%}$gitstatus"
   fi
 }
 
-PROMPT='%~%<< $(git_prompt_info)${PR_BLACK}>%{${reset_color}%} '
+PROMPT='%~%<< $(git_prompt_info)${PR_BOLD_WHITE}>%{${reset_color}%} '

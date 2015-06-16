@@ -14,6 +14,5 @@ export PR_BOLD_WHITE PR_BOLD_BLACK
 
 # Clear LSCOLORS
 unset LSCOLORS
-
 export CLICOLOR=1
 export LS_COLORS=exfxcxdxbxegedabagacad

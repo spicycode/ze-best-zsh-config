@@ -10,7 +10,6 @@ source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 source ~/src/zaw/zaw.zsh
 source /opt/boxen/env.sh
-source ~/src/zaw/zaw.zsh
 
 precmd() {
   if [[ -n "$TMUX" ]]; then

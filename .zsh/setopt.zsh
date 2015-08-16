@@ -4,7 +4,7 @@
 setopt AUTO_CD
 
 # Allow comments even in interactive shells (especially for Muness)
-setopt INTERACTIVE_COMMENTS
+# setopt INTERACTIVE_COMMENTS
 
 # ===== History
 
